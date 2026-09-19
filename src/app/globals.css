@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/*
+  Design tokens, lifted from the reference screenshots.
+  One warm palette: cream ground, brown ink, a single coral accent,
+  and four pastel tints for cards.
+*/
+@theme {
+  --color-ground: #fdf6e7;
+  --color-surface: #fefbf3;
+  --color-surface-2: #fbf1df;
+  --color-surface-3: #f2eadb;
+
+  --color-ink: #3d2f26;
+  --color-ink-2: #7b6553;
+  --color-ink-3: #a6907f;
+  --color-line: #eee3d0;
+
+  --color-accent: #ff9b5c;
+  --color-accent-2: #ffb98a;
+  --color-accent-3: #ffd9bd;
+  --color-accent-soft: #fbe5d6;
+
+  --color-tint-peach: #fbdccb;
+  --color-tint-lavender: #e8e2fa;
+  --color-tint-sage: #e6ebd7;
+  --color-tint-butter: #fbecba;
+  --color-tint-butter-2: #fef3cd;
+
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-pill: 999px;
+  --radius-card: 28px;
+
+  --shadow-float: 0 12px 40px -12px rgb(61 47 38 / 0.18), 0 2px 8px rgb(61 47 38 / 0.06);
+  --shadow-soft: 0 1px 2px rgb(61 47 38 / 0.04), 0 8px 24px -16px rgb(61 47 38 / 0.18);
+}
+
+:root {
+  color-scheme: light;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+  background: var(--color-ground);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-ground);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Small-caps eyebrow used above every display heading. */
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-2);
+}
+
+/* Big friendly display heading. */
+.display {
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-ink);
+}
+
+.display-sm {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* The orb: a soft gradient blob whose silhouette slowly drifts. */
+.orb {
+  background:
+    radial-gradient(120% 120% at 30% 20%, #ffe0a8 0%, #ffb27a 35%, #ff9457 60%, #f38a58 78%, #c8a5f0 100%);
+  box-shadow:
+    inset -20px -30px 60px rgb(255 255 255 / 0.25),
+    inset 20px 30px 60px rgb(255 140 80 / 0.25),
+    0 30px 80px -30px rgb(255 140 80 / 0.55);
+}
+
+@keyframes orb-drift {
+  0% { border-radius: 58% 42% 55% 45% / 52% 48% 52% 48%; }
+  33% { border-radius: 45% 55% 48% 52% / 58% 42% 58% 42%; }
+  66% { border-radius: 52% 48% 60% 40% / 45% 55% 45% 55%; }
+  100% { border-radius: 58% 42% 55% 45% / 52% 48% 52% 48%; }
+}
+
+.orb-drift {
+  animation: orb-drift 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-drift { animation: none; border-radius: 50%; }
+}
