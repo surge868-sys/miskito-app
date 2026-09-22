@@ -107,6 +107,7 @@ export function WordDetail({ entry }: { entry: Entry }) {
       <p className="mt-8 flex items-center gap-2 text-[15px] text-ink-3">
         {entry.verified ? <Check className="h-4 w-4" /> : <CircleDashed className="h-4 w-4" />}
         {entry.verified ? t("verifiedNotice") : t("draftNotice")}
+        {entry.source?.startsWith("by ") && ` · Bila Yumhpa ${entry.source.slice(3)}`}
       </p>
 
       {theme && (

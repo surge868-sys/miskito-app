@@ -34,6 +34,8 @@ export type Entry = {
   /** The language this word was borrowed from, when it was. */
   loan?: Lang;
   paradigm?: ParadigmRow[];
+  /** Where the draft came from: "by p.123" is the Bila Yumhpa dictionary page; "course" a public lesson file. */
+  source?: string;
   /** True once a Miskito speaker has checked it. Everything starts false. */
   verified: boolean;
 };
