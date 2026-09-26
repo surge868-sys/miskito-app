@@ -6,6 +6,7 @@ const PRECACHE = [
   "/themes",
   "/words",
   "/practice",
+  "/practice/sentences",
   "/settings",
   "/offline",
   "/manifest.webmanifest",

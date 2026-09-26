@@ -4,10 +4,11 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useLiveQuery } from "dexie-react-hooks";
-import { ArrowUpRight, RotateCcw } from "lucide-react";
+import { ArrowUpRight, MessageSquareQuote, RotateCcw } from "lucide-react";
 import { db } from "@/lib/db";
 import { useSettings } from "@/lib/settings";
 import { isDue } from "@/lib/srs";
+import { frames } from "@/data/frames";
 import { searchEntries, words } from "@/lib/phrasebook";
 import { themes, themeById } from "@/data/themes";
 import { SearchField } from "@/components/SearchField";
@@ -38,6 +39,14 @@ export function WordsScreen() {
     }).length;
   }, [reviews, recMap]);
 
+  const sentenceReady = useMemo(() => {
+    if (!reviews) return 0;
+    return frames.filter((f) => {
+      const r = recMap.get(f.kind === "fill" ? `frame:${f.id}` : `ending:${f.id}`);
+      return !r || isDue(r);
+    }).length;
+  }, [reviews, recMap]);
+
   const chips = [{ id: "all", label: t("all") }, ...themes.map((th) => ({ id: th.id, label: bi(th.name) }))];
 
   const onChip = (id: string) => {
@@ -63,6 +72,20 @@ export function WordsScreen() {
         </span>
         <span className="flex items-center gap-3 text-[17px] text-ink-2">
           {readyCount > 0 ? `${readyCount} ${t("ready")}` : t("allCaughtUp")}
+          <ArrowUpRight className="h-6 w-6 text-ink" strokeWidth={2.2} />
+        </span>
+      </Link>
+
+      <Link
+        href="/practice/sentences"
+        className="mt-3 flex items-center justify-between rounded-card bg-surface px-6 py-5 shadow-soft transition-transform active:scale-[0.99]"
+      >
+        <span className="flex items-center gap-3 text-[22px] font-semibold text-ink">
+          <MessageSquareQuote className="h-6 w-6" strokeWidth={2.2} />
+          {t("sentences")}
+        </span>
+        <span className="flex items-center gap-3 text-[17px] text-ink-2">
+          {sentenceReady > 0 ? `${sentenceReady} ${t("ready")}` : t("allCaughtUp")}
           <ArrowUpRight className="h-6 w-6 text-ink" strokeWidth={2.2} />
         </span>
       </Link>

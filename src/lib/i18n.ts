@@ -75,6 +75,20 @@ export const strings = {
     es: "No hay nada pendiente. Vuelve más tarde, o abre una palabra y practícala.",
   },
 
+  // Sentences
+  sentences: { en: "Sentences", es: "Oraciones" },
+  sentencesEyebrow: { en: "Whole sentences", es: "Oraciones completas" },
+  sayTheSentence: { en: "Say the whole sentence in Miskito.", es: "Di la oración completa en miskito." },
+  pickEnding: { en: "Pick the ending.", es: "Elige la terminación." },
+  putInOrder: { en: "Tap the words in order.", es: "Toca las palabras en orden." },
+  check: { en: "Check", es: "Comprobar" },
+  startOver: { en: "Start over", es: "Empezar de nuevo" },
+  thatsIt: { en: "That's it.", es: "Eso es." },
+  notQuite: { en: "Not quite. It goes:", es: "Casi. Es así:" },
+  next: { en: "Next", es: "Siguiente" },
+  endingHint: { en: "Present tense: stem + sna for I, sma for you, sa for he or she.", es: "Presente: raíz + sna para yo, sma para tú, sa para él o ella." },
+  frameNote: { en: "Frame", es: "Patrón" },
+
   // Themes
   themesEyebrow: { en: "A place to begin", es: "Un lugar para empezar" },
   themesTitle: { en: "What's on your mind?", es: "¿Qué tienes en mente?" },
