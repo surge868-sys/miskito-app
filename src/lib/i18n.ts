@@ -110,6 +110,21 @@ export const strings = {
   nextPhrase: { en: "Another one", es: "Otra" },
   openWord: { en: "Open this word", es: "Abrir esta palabra" },
 
+  // Dialogues
+  conversations: { en: "Conversations", es: "Conversaciones" },
+  pickConversation: { en: "Pick a conversation", es: "Elige una conversación" },
+  yourTurn: { en: "Your turn", es: "Tu turno" },
+  bilaSays: { en: "Bila says", es: "Bila dice" },
+  tryAgain: { en: "Try another reply.", es: "Prueba otra respuesta." },
+  conversationDone: { en: "Nice talking.", es: "Qué bien charlar." },
+  replies: { en: "replies", es: "respuestas" },
+  firstTry: { en: "on the first try", es: "a la primera" },
+  talkAgain: { en: "Talk again", es: "Hablar otra vez" },
+  moreConversations: { en: "More conversations", es: "Más conversaciones" },
+  begin: { en: "Begin", es: "Empezar" },
+  you: { en: "You", es: "Tú" },
+  end: { en: "End", es: "Terminar" },
+
   // Settings
   explainIn: { en: "Explain in", es: "Explicar en" },
   both: { en: "Both", es: "Ambos" },

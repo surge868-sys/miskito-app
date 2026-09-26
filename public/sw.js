@@ -3,6 +3,7 @@ const VERSION = "bila-v1";
 const PRECACHE = [
   "/",
   "/talk",
+  "/talk?d=door",
   "/themes",
   "/words",
   "/practice",
