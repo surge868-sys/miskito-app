@@ -690,6 +690,13 @@ export const phrasebook: Entry[] = [
   e({ id: "naika", mk: "Naika", gloss: { en: "Later, soon after", es: "Más tarde, luego" }, theme: "time", kind: "word", source: "by p.185" }),
   e({ id: "aima", mk: "Aima", gloss: { en: "Time, occasion", es: "Vez, ocasión" }, note: { en: "aima kum, one time, once.", es: "aima kum, una vez." }, theme: "time", kind: "word", pos: "noun", source: "by p.14" }),
 
+  e({ id: "witin", mk: "Witin", gloss: { en: "He, she", es: "Él, ella" }, theme: "greetings", kind: "word", pos: "pron" }),
+  e({ id: "yang", mk: "Yang", gloss: { en: "I", es: "Yo" }, theme: "greetings", kind: "word", pos: "pron" }),
+  e({ id: "man", mk: "Man", gloss: { en: "You", es: "Tú, usted" }, theme: "greetings", kind: "word", pos: "pron" }),
+  e({ id: "naha", mk: "Naha", gloss: { en: "This", es: "Esto, este" }, theme: "greetings", kind: "word" }),
+  e({ id: "baha", mk: "Baha", gloss: { en: "That", es: "Eso, ese" }, theme: "greetings", kind: "word" }),
+  e({ id: "apu", mk: "Apu", gloss: { en: "None, there isn't any; zero", es: "Nada, no hay; cero" }, theme: "town", kind: "word" }),
+
   // ── Patterns ──────────────────────────────────────────────────────────
   e({
     id: "p-numbers",
@@ -832,6 +839,79 @@ export const phrasebook: Entry[] = [
       { form: "araski", label: { en: "my horse", es: "mi caballo" } },
       { form: "araskam", label: { en: "your horse", es: "tu caballo" } },
       { form: "araska", label: { en: "his or her horse", es: "su caballo" } },
+    ],
+  }),
+  e({
+    id: "p-past",
+    mk: "-ri, -ram, -n",
+    gloss: { en: "Past tense endings", es: "Terminaciones del pasado" },
+    note: {
+      en: "Root plus ri, ram, and n for I, you, he or she. After a consonant the third person takes an: kaikan, balan.",
+      es: "Raíz más ri, ram y n para yo, tú, él o ella. Tras consonante la tercera persona lleva an: kaikan, balan.",
+    },
+    theme: "time",
+    kind: "pattern",
+    paradigm: [
+      { form: "piri", label: { en: "I ate", es: "comí" } },
+      { form: "piram", label: { en: "you ate", es: "comiste" } },
+      { form: "pin", label: { en: "he or she ate", es: "comió" } },
+      { form: "wari", label: { en: "I went", es: "fui" } },
+      { form: "kaikan", label: { en: "he or she saw", es: "vio" } },
+    ],
+  }),
+  e({
+    id: "p-future",
+    mk: "-amna, -ma, -bia",
+    gloss: { en: "Future tense endings", es: "Terminaciones del futuro" },
+    note: {
+      en: "Root plus amna, ma, bia. Vowel-final roots drop the a: wamna, wama, wabia.",
+      es: "Raíz más amna, ma, bia. Las raíces en vocal pierden la a: wamna, wama, wabia.",
+    },
+    theme: "time",
+    kind: "pattern",
+    paradigm: [
+      { form: "kaikamna", label: { en: "I will see", es: "veré" } },
+      { form: "kaikma", label: { en: "you will see", es: "verás" } },
+      { form: "kaikbia", label: { en: "he or she will see", es: "verá" } },
+      { form: "wamna", label: { en: "I will go", es: "iré" } },
+      { form: "balbia", label: { en: "he or she will come", es: "vendrá" } },
+    ],
+  }),
+  e({
+    id: "p-negation",
+    mk: "-ras",
+    gloss: { en: "Saying no: the negative", es: "Decir que no: el negativo" },
+    note: {
+      en: "ras on the root makes any person negative in the present. apia negates everything else: nu apia, I don't know.",
+      es: "ras en la raíz niega cualquier persona en presente. apia niega todo lo demás: nu apia, no sé.",
+    },
+    theme: "greetings",
+    kind: "pattern",
+    paradigm: [
+      { form: "briras", label: { en: "don't have", es: "no tengo, no tienes, no tiene" } },
+      { form: "piras", label: { en: "don't eat", es: "no como" } },
+      { form: "kaikras", label: { en: "don't see", es: "no veo" } },
+      { form: "aisaras", label: { en: "don't speak", es: "no hablo" } },
+      { form: "apu", label: { en: "there is none", es: "no hay" } },
+    ],
+  }),
+  e({
+    id: "p-commands",
+    mk: "Pis, dis, was",
+    gloss: { en: "Commands", es: "Mandatos" },
+    note: {
+      en: "The root plus s tells one person to do it. Come is simply bal.",
+      es: "La raíz más s manda a una persona. Ven es simplemente bal.",
+    },
+    theme: "greetings",
+    kind: "pattern",
+    paradigm: [
+      { form: "pis", label: { en: "eat!", es: "¡come!" } },
+      { form: "dis", label: { en: "drink!", es: "¡bebe!" } },
+      { form: "kaiks", label: { en: "look!", es: "¡mira!" } },
+      { form: "was", label: { en: "go!", es: "¡ve!" } },
+      { form: "bal", label: { en: "come!", es: "¡ven!" } },
+      { form: "aik", label: { en: "give me!", es: "¡dame!" } },
     ],
   }),
   e({

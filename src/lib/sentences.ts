@@ -1,4 +1,4 @@
-import { frames, PERSONS, type EndingFrame, type FillFrame } from "@/data/frames";
+import { frames, OBJECT_PHRASES, PERSONS, type EndingFrame, type FillFrame } from "@/data/frames";
 import { entryById } from "@/data/phrasebook";
 import { db } from "./db";
 import { isDue, rate, Rating } from "./srs";
@@ -58,16 +58,17 @@ export function makeEnding(frame: EndingFrame): EndingItem {
   const person = Math.floor(Math.random() * 3);
   const p = PERSONS[person];
   const obj = frame.obj ? entryById.get(frame.obj) : undefined;
-  const objMk = obj ? inline(obj) + " " : "";
+  const objMk = frame.obj && OBJECT_PHRASES[frame.obj] ? OBJECT_PHRASES[frame.obj] + " " : obj ? inline(obj) + " " : "";
   const objForm = frame.id === "bri" ? "aras kum " : objMk;
+  const ending = frame.endings[person];
   return {
     kind: "ending",
     frame,
     person,
     prompt: `${p.pronoun} ${objForm}${frame.stem}`,
-    answer: p.ending,
-    options: PERSONS.map((x) => x.ending),
-    sentence: `${p.pronoun} ${objForm}${frame.stem}${p.ending}.`,
+    answer: ending,
+    options: [...frame.endings],
+    sentence: `${p.pronoun} ${objForm}${frame.stem}${ending}.`,
     gloss: { en: `${p.en} ${frame.en[person]}.`, es: `${p.es} ${frame.es[person]}.` },
     reviewId: `ending:${frame.id}`,
   };

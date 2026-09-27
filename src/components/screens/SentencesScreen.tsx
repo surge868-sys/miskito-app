@@ -209,7 +209,7 @@ export function SentencesScreen() {
               </button>
             ))}
           </div>
-          <p className="mt-4 text-[15px] text-ink-3">{t("endingHint")}</p>
+          <p className="mt-4 text-[15px] text-ink-3">{t(item.frame.tense === "past" ? "endingHintPast" : item.frame.tense === "future" ? "endingHintFuture" : "endingHint")}</p>
           {picked && (
             <div className="mt-6 rounded-card bg-surface p-6 shadow-soft">
               <p className="text-[17px] text-ink-2">{checked ? t("thatsIt") : t("notQuite")}</p>

@@ -88,6 +88,8 @@ export const strings = {
   next: { en: "Next", es: "Siguiente" },
   endingHint: { en: "Present tense: stem + sna for I, sma for you, sa for he or she.", es: "Presente: raíz + sna para yo, sma para tú, sa para él o ella." },
   frameNote: { en: "Frame", es: "Patrón" },
+  endingHintPast: { en: "Past tense: ri for I, ram for you, n or an for he or she.", es: "Pasado: ri para yo, ram para tú, n o an para él o ella." },
+  endingHintFuture: { en: "Future: amna or mna for I, ma for you, bia for he or she.", es: "Futuro: amna o mna para yo, ma para tú, bia para él o ella." },
 
   // Themes
   themesEyebrow: { en: "A place to begin", es: "Un lugar para empezar" },
